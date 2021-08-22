@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   mainFeaturesPost: {
     position: 'relative',
     color:  theme.palette.common.white,
-    marginBottom: theme.spacing(6),
+    marginBottom: theme.spacing(4),
 
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeate',
@@ -26,7 +26,16 @@ const useStyles = makeStyles((theme) => ({
   },
   mainFeaturesPostContent: {
     position: 'relative',
-    padding: theme.spacing(3)
+    padding: theme.spacing(6),
+    marginTop: theme.spacing(1)
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    backgroundOverlay: "rgba(0,0,0,.3)"
   }
 }))
 
@@ -59,6 +68,7 @@ function App() {
       <Paper className={classes.mainFeaturesPost}
       style={{ backgroundImage: `url(https://source.unsplash.com/random)`}}>
         <Container fixed>
+          <div className={classes.overlay}/>
           <Grid Container>
             <Grid item md={6}>
               <div className={classes.mainFeaturesPostContent}>
@@ -83,6 +93,13 @@ function App() {
           </Grid>
         </Container>
       </Paper>
+      <div className={classes.mainContent}>
+        <Container maxWidth='sm'>
+          <Typography variant='h1' align='center' text=>
+            Web developer Blog
+          </Typography>
+        </Container>
+      </div>
     </main>
     </>
   );
